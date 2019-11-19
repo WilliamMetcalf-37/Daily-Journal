@@ -1,0 +1,32 @@
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 50%;
+
+}
+fieldset{
+  outline: 1px black solid;
+}
+textarea{
+  block-size: auto;
+  max-width: 80%;
+  size: unset;
+}
+.date{
+  max-width: 30%;
+}
+.concepts{
+  max-width: 40%;
+}
+.journal__entry{
+  max-width: 80%;
+}
+.mood{
+  max-width: 40%;
+}
+.record{
+  max-width: 30%;
+  padding: 5px;
+  margin: 1px;
+}
