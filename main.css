@@ -30,3 +30,13 @@ textarea{
   padding: 5px;
   margin: 1px;
 }
+.JournalEntryList{
+  display: flex;
+  flex-wrap: wrap;
+}
+.journalEntry{
+  flex-basis: 30%;
+  border: 1px black solid;
+  margin: .5em;
+  text-align: center;
+}

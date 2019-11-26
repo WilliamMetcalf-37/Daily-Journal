@@ -6,38 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="main.css">
-  <script src="/scripts/JournalDataProvider.js"></script>
 </head>
 <body>
-  <main>
-
-    <h1>Daily Journal</h1>
-    <form action="">
-      
-        <fieldset class = "journal__item">
-          <label>Date</label><br>
-          <input type="date" name="" id="datePicker" class = "date" >  
-        </fieldset>
-        <fieldset class = "journal__item">
-          <label>Concepts Covered</label> <br>
-          <input type="text" class = "concepts" >
-        </fieldset>
-        <fieldset class = "journal__item">
-          <label>Journal Entry</label><br>
-          <textarea row = "1" cols="65" class = "journal__entry" placeholder="Enter Shit"></textarea>
-        </fieldset>
-        <fieldset class = "journal__item">
-          <label>Mood</label><br>
-          <select class = "mood" >
-            <option value="" selected disabled hidden>Select Your Mood</option>
-            <option value="happy">Happy</option>
-            <option value="fine">Fine</option>
-            <option value="sad">Sad</option>
-          </select>
-        </fieldset>
-  
-        <button class = "record" onclick = "doIWork()">Record Journal Entry</button>
-    </form>
+  <main id = "JournalHTML">
+    
+    
   </main>
+  <section id = "entryLog"></section>
+  <script type="module" src="./scripts/main.js"></script>
 </body>
 </html>
