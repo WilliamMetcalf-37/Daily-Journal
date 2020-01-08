@@ -5,10 +5,14 @@
 const JournalEntryComponent = (entry) => {
   return `
       <section id="entry--${entry.id}" class="journalEntry">
-        <p>${entry.date}</p>
-        <p>${entry.concept}</p>
-        <p>${entry.entry}</p>
-        <p>${entry.mood}</p>
+        
+        <div id="date">${new Date(entry.date).toLocaleDateString('en-US')}</div>
+        <div id="concept">${entry.concept}</div>
+        <div id="entry">${entry.entry}</div>
+        <div id="mood">${entry.mood}</div>
+        <button id="delete--${entry.id}">Delete Entry</button>
+        <button id="edit--${entry.id}">Edit Entry</button>
+        
       </section>
   `
 }

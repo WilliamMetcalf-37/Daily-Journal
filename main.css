@@ -40,3 +40,11 @@ textarea{
   margin: .5em;
   text-align: center;
 }
+.searchfilter{
+  display: flex;
+  justify-content: space-evenly;
+}
+.filterbox{
+  border: 1px solid black;
+  flex-basis: 40%;
+}

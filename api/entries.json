@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "date": 1578509477979,
+      "concept": "JS",
+      "entry": "did stuff",
+      "mood": "happy",
+      "id": 1
+    },
+    {
+      "date": 1578509699193,
+      "concept": "HTML",
+      "entry": "dont do stuff again",
+      "mood": "sad",
+      "id": 2
+    }
+  ]
+}

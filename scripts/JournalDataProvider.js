@@ -1,42 +1,51 @@
-/*
- *   Journal data provider for Daily Journal application
- *
- *      Holds the raw data about each entry and exports
- *      functions that other modules can use to filter
- *      the entries for different purposes.
- */
+let entries = []
 
-// This is the original data. Can't Touch This.
-const entry = [
-  {
-      date: "07/24/2025",
-      concept: "HTML & CSS",
-      entry: "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-      mood: "Ok"
-  },
-  {
-      date: "07/29/2025",
-      concept: "HTML & CSS",
-      entry: "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-      mood: "Ok"
-  },
-  {
-      date: "07/22/2025",
-      concept: "HTML & CSS",
-      entry: "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-      mood: "Ok"
+export const getEntries = ( ) =>{
+ return fetch('http://localhost:3000/entries') // Fetch from the API
+.then(response => response.json())  // Parse as JSON
+.then(parsedEntries => {
+    entries = parsedEntries.slice()
+}) 
+}
+
+export const saveEntry = entry =>{
+    return fetch('http://localhost:3000/entries',
+
+    {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(entry)
+  })
+  .then(getEntries)
+}
+
+export const deleteEntry = entryId => {
+    return fetch(`http://localhost:3000/entries/${entryId}`, {
+        method: "DELETE"
+    })
+        .then(getEntries)
   }
-]
+  
+  export const editEntry = entry =>{
+    return fetch(`http://localhost:3000/entries/${entry.id}`, {
+    method: "PUT",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify(entry)
+  }).then(getEntries)
+  }
 
-/*
-  You export a function that provides a version of the
-  raw data in the format that you want
-*/
  export const useJournalEntries = () => {
-  const sortedByDate = entry.sort(
+  const sortedByDate = entries.sort(
       (currentEntry, nextEntry) =>
           Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
           
   )
   return sortedByDate
+}
+export const useEntry = ()=>{
+    return entries
 }
